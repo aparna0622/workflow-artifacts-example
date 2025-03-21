@@ -1,0 +1,19 @@
+name: artifact-example
+on: push
+env: 
+  ARTIFACT_NAME: 'My Custom Artifact'
+
+jobs:
+  artifact-upload:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+      - name: upload the artifact
+        uses: actions/upload-artifact@v4
+        with: 
+          name: $ARTIFACT_NAME
+          path: .
+            
+  
+ 
